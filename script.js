@@ -1,3 +1,14 @@
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+
 const $ = str => document.querySelector(str);
 const $$ = str => document.querySelectorAll(str);
 
@@ -169,5 +180,23 @@ const $$ = str => document.querySelectorAll(str);
         state: {}
 
     }
+
+    let navbar = document.getElementById("navbar");
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            navbar.style.transform = "rotateX(-90deg)";  // flip the navbar up
+        } else {
+            // Scrolling up
+            navbar.style.transform = "rotateX(0deg)";    // reset the navbar
+        }
+
+        lastScrollTop = scrollTop;
+    });
+    
     app.carousel.init();
 })();
