@@ -1,47 +1,123 @@
-html, body, main {
+html, body, main 
+{
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
+  padding-top: 60px;
   background-color: #F1EFEF;
+  font-family: 'Poppins', sans-serif;
+}
+#navbar 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F1EFEF;
+  color: black;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.5s;
+  transform-origin: top;
+  padding-right: 40px; 
 }
 
-#carousel {
-  position: relative;
-  height: 400px;
-  top: 50%;
-  transform: translateY(-50%);
-  overflow: hidden;
+.logo a img 
+{
+  max-height: 45px; 
+  width: auto;
 }
-#carousel div {
+
+#navbar ul 
+{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 40px;
+}
+
+#navbar li 
+{
+  margin-left: 20px; 
+}
+
+#navbar a 
+{
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+}
+
+#navbar li a::before 
+{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ff9900; 
+  transition: all 0.3s;
+}
+
+#navbar li a:hover::before 
+{
+  width: 100%;
+  left: 0;
+}
+
+#carousel 
+{
+  position: relative; 
+  height: 400px;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  z-index: 999;
+  transform: translateX(-50%);
+}
+#carousel div 
+{
   position: absolute;
   transition: transform 400ms, left 400ms, opacity 400ms, z-index 0s;
   opacity: 1;
 }
-#carousel div img {
+#carousel div img 
+{
   width: 400px;
   transition: width 400ms;
    -webkit-user-drag: none;
    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
    border-radius: 10px;
 }
-#carousel div.hideLeft {
+#carousel div.hideLeft 
+{
   left: 0%;
   opacity: 0;
   transform: translateY(50%) translateX(-50%);
 }
-#carousel div.hideLeft img {
+#carousel div.hideLeft img 
+{
   width: 200px;
 }
-#carousel div.hideRight {
+#carousel div.hideRight 
+{
   left: 100%;
   opacity: 0;
   transform: translateY(50%) translateX(-50%);
 }
-#carousel div.hideRight img {
+#carousel div.hideRight img 
+{
   width: 200px;
 }
-#carousel div.prev {
+#carousel div.prev 
+{
   z-index: 5;
   left: 30%;
   transform: translateY(50px) translateX(-50%);
@@ -50,54 +126,65 @@ html, body, main {
 {
   cursor: default;
 }
-#carousel div.prev img {
+#carousel div.prev img 
+{
   width: 300px;
 }
-#carousel div.prevLeftSecond {
+#carousel div.prevLeftSecond 
+{
   z-index: 4;
   left: 15%;
   transform: translateY(50%) translateX(-50%);
   opacity: 0.7;
 }
-#carousel div.prevLeftSecond img {
+#carousel div.prevLeftSecond img 
+{
   width: 200px;
 }
-#carousel div.selected {
+#carousel div.selected 
+{
   z-index: 10;
   left: 50%;
   transform: translateY(0px) translateX(-50%);
 }
-#carousel div.next {
+#carousel div.next 
+{
   z-index: 5;
   left: 70%;
   transform: translateY(50px) translateX(-50%);
 }
-#carousel div.next img {
+#carousel div.next img 
+{
   width: 300px;
 }
-#carousel div.nextRightSecond {
+#carousel div.nextRightSecond 
+{
   z-index: 4;
   left: 85%;
   transform: translateY(50%) translateX(-50%);
   opacity: 0.7;
 }
-#carousel div.nextRightSecond img {
+#carousel div.nextRightSecond img 
+{
   width: 200px;
 }
 
-.buttons {
-  position: fixed;
+.buttons 
+{
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 100px;
+  bottom: 10%; 
   display: flex;
   justify-content: space-between; 
   width: 80%; 
   max-width: 1000px; 
   padding: 0 10px; 
+  z-index: 1000; 
 }
 
-.button-82-pushable {
+.button-82-pushable 
+{
   width: 60px;
   height: 60px;
   border: none;
@@ -107,9 +194,111 @@ html, body, main {
   overflow: hidden;
 }
 
-.button-82-front img {
+.button-82-front img 
+{
   width: 100%;
   height: 100%;
   display: block;
   
 }
+
+.dedicated-div 
+{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px 5%; 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  margin-top: 56px;
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.quote-section 
+{
+  flex: 2; 
+  padding-right: 5%; 
+  text-align: center; 
+}
+
+.quote-section blockquote 
+{
+  font-size: 1.5em;
+  color: #555;
+  margin-bottom: 10px;
+  text-align: left; 
+}
+
+.quote-section cite 
+{
+  display: block;  
+  margin-top: 10px; 
+}
+
+.quote-section button 
+{
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px; 
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.quote-section button:hover 
+{
+  background-color: #ff9900;
+}
+
+.image-section {
+  flex: 1;
+  text-align: right;
+}
+
+.image-section video {
+  max-width: 70%; 
+  border-radius: 8px;
+}
+.btn-group {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.explore-btn, .learn-more-btn {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.explore-btn:hover, .learn-more-btn:hover {
+  background-color: #ff9900;
+}
+
+.dedicated-div:nth-child(odd) .quote-section {
+  order: 2; 
+  text-align: right; 
+}
+
+.dedicated-div:nth-child(odd) .image-section {
+  order: 1; 
+  text-align: left; 
+}
+
+
+.dedicated-div:nth-child(even) .image-section video,
+.dedicated-div:nth-child(even) .image-section img {
+  margin-left: auto; 
+}
+
+.dedicated-div:nth-child(odd) .image-section video,
+.dedicated-div:nth-child(odd) .image-section img {
+  margin-right: auto; 
+}
+
